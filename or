@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF=8">
+<meta name="viewport " content="width-device-width,inital-scale=1.0">
+<title>Project Mangment</title>
+<style>
+.container{
+max-width:300px;
+margin:0 auto;
+padding:20px;
+background-color:yellow;
+border-radius:5px;
+}
+h1{
+font-size: 24pt;
+color:red;
+text-align: center;
+}
+.button {
+border: none;
+color:blue;
+padding: 4px 8px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 2px 2px;
+cursor: pointer;
+}
+.success {background-color: #04AA6D;} /* Green */
+.primary {background-color: #2500ba;} /* Blue */
+</style>
+</head>
+<body>
+<h1>Project Managment</h1>
+<div class="container">
+<label for="Project name">Project Name </label>
+<input id="pname" name="pname" value="pname"><br>
+<label for="Assigned To">Assigned To</label>
+<select id="teacher" name="teacher">
+<option value="ABC">AbC</option>
+<option value="XYZ">XYZ</option>
+<option value="C">AC</option>
+</select><br>
+<label for="start date">Start Date</label>
+<input type="date" value="start date"><br>
+<label for="end date">End Date</label>
+<input type="date" value="End date"><br>
+<label for="Priority">Priority</label>
+<input type="radio" value="high">High</input>
+<input type="radio" value="Average">Average</input>
+<input type="radio" value="Low">Low</input><br>
+<label for="Description">Description</label>
+<input type="textarea"><br>
+<button type="button" class="button success">Submit</button>
+<button type="button" class="button primary">Clear</button>
+</div>
+</body>
+</html>
