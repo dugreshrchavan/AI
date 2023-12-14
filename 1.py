@@ -1,47 +1,125 @@
-import matplotlib.pyplot as plt
-import numpy as np
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
 
-# Define the mathematical function
-def objective_function(x):
-    return -x**2 + 4*x
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: yellow;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        select {
+            box-sizing: border-box;
+            width: 80%;
+            margin: 8px 0;+
+            padding: 10px 5px;
+            border-radius: 5px;
+        }
 
-# Hill climbing algorithm
-def hill_climbing(initial_x, step_size, num_steps):
-    current_x = initial_x
+        header {
+            font-size: 55px;
+            padding: 5px;
+            border-radius: 5px;
+            text-decoration: underline;
+            text-align: center;
+            font-family: Arial;
+            color: black;
+        
+ }
 
-    for _ in range(num_steps):
-        # Evaluate the current and neighboring points
-        current_value = objective_function(current_x)
-        next_value = objective_function(current_x + step_size)
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
 
-        # If the neighboring point has a higher value, move to that point
-        if next_value > current_value:
-            current_x += step_size
-        else:
-            break  # Stop if no improvement is found
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+         }
 
-    return current_x
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
 
-# Set initial parameters
-initial_x = 0.0
-step_size = 0.1
-num_steps = 100
+        input[type="submit"] {
+            background-color: #4caf50; /* Green color for Submit button */
+            color: #fff;
+        }
 
-# Run the hill climbing algorithm
-result = hill_climbing(initial_x, step_size, num_steps)
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
 
-# Print the result
-print("Maximum found at x =", result)
-print("Maximum function value =", objective_function(result))
+        input[type="reset"] {
+            background-color: #3498db; /* Blue color for Clear button */
+            color: #fff;
+        }
 
-# Plot the function
-x_values = np.linspace(-2, 6, 100)
-y_values = objective_function(x_values)
+        input[type="reset"]:hover {
+            background-color: #2980b9;
+        }
 
-plt.plot(x_values, y_values, label='f(x) = -x^2 + 4x')
-plt.scatter(result, objective_function(result), color='red', label='Maximum')
-plt.title('Hill Climbing Algorithm')
-plt.xlabel('x')
-plt.ylabel('f(x)')
-plt.legend()
-plt.show()
+    </style>
+    <title>Project Form</title>
+</head>
+<body>
+    <header>Project Management</header>
+
+    <form>
+        <label for="projectName">Project Name:</label>
+        <input type="text" id="projectName" name="projectName" placeholder="Project name" required>
+
+        <label for="ASSIGNED">ASSIGNED</label>
+           <select>
+           <option value="option">tushar rajaram</option>
+           <option value="option">aniket</option>
+           <option value="option">joshi</option>
+           <option value="option">durgesh</option>
+           </select>
+
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required>
+
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required>
+
+        <th class="row1">Priority: </th>
+        <tr><td>
+        <input type="radio" name="priority" id="high" value="High"> High
+       <input type="radio" name="priority" id="average" value="Average"> Average
+       <input type="radio" name="priority" id="low" value="Low"> Low
+         </td>
+        </tr>
+
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </form>
+
+</body>
+</html>
