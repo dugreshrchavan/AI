@@ -25,4 +25,56 @@ c. Give the details of owner whose property is at “Nashik”.
 db.properties1.find({area:"Nashik"})
 d. Display area of property whose rate is less than 100000.
 >>db.properties1.find( { rate: { $gt:(100000)} } );
-Q1
+
+
+
+
+
+
+
+Json Format:Property collection
+[
+  {
+    "_id": 1,
+    "area": "Mumbai",
+    "rate": 150000,
+    "ownerId": 101
+  },
+  {
+    "_id": 2,
+    "area": "Pune",
+    "rate": 120000,
+    "ownerId": 102
+  },
+  {
+    "_id": 3,
+    "area": "Nashik",
+    "rate": 90000,
+    "ownerId": 103
+  },
+  // Add more property documents
+]
+
+
+----//-----------------------//------------------//-
+Json format : Owner collection
+[
+  {
+    "_id": 101,
+    "name": "Mr. Patil",
+    "propertiesOwned": [1, 4]  // Property IDs owned by Mr. Patil
+  },
+  {
+    "_id": 102,
+    "name": "Mrs. Shah",
+    "propertiesOwned": [2, 5]
+  },
+  {
+    "_id": 103,
+    "name": "Mr. Deshmukh",
+    "propertiesOwned": [3]
+  },
+  // Add more owner documents
+]
+
+
